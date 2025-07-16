@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go_lang/todo"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -9,6 +10,8 @@ import (
 func main() {
 	g := gin.Default()
 	g.GET("/", handleInitialRoute)
+	g.GET("/todos", todo.HandleGetTodos)
+
 	g.Run(":8080")
 
 }
